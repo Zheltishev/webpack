@@ -15,13 +15,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            minify: false,
-            hash: true,
-            favicon: './src/favicon.png',
+            template: './src/index.html',
         }),
     ],
     module: {
         rules: [
+            {
+                test: /\.html?$/,
+                use: 'html-loader',
+                exclude: /node_modules/,
+            },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
