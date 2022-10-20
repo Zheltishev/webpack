@@ -1,5 +1,6 @@
-import './style.css';
+import './style.scss';
 import './index.html';
+const bootstrap = require('bootstrap');
 
 const ts: string = 'typescript';
 

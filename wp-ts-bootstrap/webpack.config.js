@@ -16,6 +16,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            minify: false,
+            hash: true,
+            favicon: './src/favicon.png',
         }),
     ],
     module: {
@@ -31,8 +34,8 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
         ],
     },
